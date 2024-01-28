@@ -1,16 +1,6 @@
 ﻿using jyankenGame.usecase;
-using System.IO;
-using System.Reflection;
-using System.Text;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 
 namespace jyankenGame
 {
@@ -33,52 +23,46 @@ namespace jyankenGame
         /// <param name="e"></param>
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            BitmapImage bitmap = new BitmapImage();
-            bitmap.DecodePixelWidth = 500;
-            bitmap.CacheOption = BitmapCacheOption.OnLoad;
-            bitmap.CreateOptions = BitmapCreateOptions.None;
+            Uri? uri = null;
             if (resultDecideService.ServiceWinGame())
             {
-                bitmap.UriSource = new Uri("resources/paper.png", UriKind.Relative);
+                uri = new Uri("resources/paper.png", UriKind.Relative);
             }
             else
             {
-                bitmap.UriSource = new Uri("resources/scissor.png", UriKind.Relative);
+                uri = new Uri("resources/scissor.png", UriKind.Relative);
             }
-            bitmap.EndInit();
-
+            var bitmap = new BitmapImage(uri); 
             ResultImage.Source = bitmap;
         }
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
-            BitmapImage bitmap = new BitmapImage();
-            bitmap.BeginInit();
+            Uri? uri = null;
             if (resultDecideService.ServiceWinGame())
             {
-                bitmap.UriSource = new Uri("resources/rock.png", UriKind.Relative);
+                uri = new Uri("resources/rock.png", UriKind.Relative);
             }
             else
             {
-                bitmap.UriSource = new Uri("resources/paper.png", UriKind.Relative);
+                uri = new Uri("resources/paper.png", UriKind.Relative);
             }
-            bitmap.EndInit();
+            var bitmap = new BitmapImage(uri);
             ResultImage.Source = bitmap;
         }
 
         private void Button_Click_2(object sender, RoutedEventArgs e)
         {
-            BitmapImage bitmap = new BitmapImage();
-            bitmap.BeginInit();
+            Uri? uri = null;
             if (resultDecideService.ServiceWinGame())
             {
-                bitmap.UriSource = new Uri("resources/scissor.png", UriKind.Relative);
+                uri = new Uri("resources/scissor.png", UriKind.Relative);
             }
             else
             {
-                bitmap.UriSource = new Uri("resources/rock.png", UriKind.Relative);
+                uri = new Uri("resources/rock.png", UriKind.Relative);
             }
-            bitmap.EndInit();
+            var bitmap = new BitmapImage(uri);
             ResultImage.Source = bitmap;
         }
     }

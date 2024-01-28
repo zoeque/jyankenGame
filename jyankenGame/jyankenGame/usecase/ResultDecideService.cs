@@ -1,15 +1,8 @@
-﻿using System;
-using System.CodeDom;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace jyankenGame.usecase
+﻿namespace jyankenGame.usecase
 {
     class ResultDecideService
     {
-        private static int RATE = 100;
+        private static int RATE = 30;
         public Boolean ServiceWinGame()
         {
             Random rnd = new Random();
