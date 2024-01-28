@@ -1,8 +1,11 @@
-﻿namespace jyankenGame.usecase
+﻿using System.Configuration;
+
+namespace jyankenGame.usecase
 {
     class ResultDecideService
     {
-        private static int RATE = 30;
+        private static int RATE = int.Parse(ConfigurationManager.AppSettings["Rate"]);
+
         public Boolean ServiceWinGame()
         {
             Random rnd = new Random();
