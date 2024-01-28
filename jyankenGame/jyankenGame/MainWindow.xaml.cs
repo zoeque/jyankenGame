@@ -1,4 +1,6 @@
 ﻿using jyankenGame.usecase;
+using System.IO;
+using System.Reflection;
 using System.Text;
 using System.Windows;
 using System.Windows.Controls;
@@ -25,44 +27,59 @@ namespace jyankenGame
         }
 
         /// <summary>
-        /// 
+        /// Click the button of rock
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
         private void Button_Click(object sender, RoutedEventArgs e)
         {
+            BitmapImage bitmap = new BitmapImage();
+            bitmap.DecodePixelWidth = 500;
+            bitmap.CacheOption = BitmapCacheOption.OnLoad;
+            bitmap.CreateOptions = BitmapCreateOptions.None;
             if (resultDecideService.ServiceWinGame())
             {
-                ResultLabel.Content = "パー";
+                bitmap.UriSource = new Uri("resources/paper.png", UriKind.Relative);
             }
             else
             {
-                ResultLabel.Content = "チョキ";
+                bitmap.UriSource = new Uri("resources/scissor.png", UriKind.Relative);
             }
+            bitmap.EndInit();
+
+            ResultImage.Source = bitmap;
         }
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
+            BitmapImage bitmap = new BitmapImage();
+            bitmap.BeginInit();
             if (resultDecideService.ServiceWinGame())
             {
-                ResultLabel.Content = "グー";
+                bitmap.UriSource = new Uri("resources/rock.png", UriKind.Relative);
             }
             else
             {
-                ResultLabel.Content = "パー";
+                bitmap.UriSource = new Uri("resources/paper.png", UriKind.Relative);
             }
+            bitmap.EndInit();
+            ResultImage.Source = bitmap;
         }
 
         private void Button_Click_2(object sender, RoutedEventArgs e)
         {
+            BitmapImage bitmap = new BitmapImage();
+            bitmap.BeginInit();
             if (resultDecideService.ServiceWinGame())
             {
-                ResultLabel.Content = "チョキ";
+                bitmap.UriSource = new Uri("resources/scissor.png", UriKind.Relative);
             }
             else
             {
-                ResultLabel.Content = "グー";
+                bitmap.UriSource = new Uri("resources/rock.png", UriKind.Relative);
             }
+            bitmap.EndInit();
+            ResultImage.Source = bitmap;
         }
     }
 }

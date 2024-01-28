@@ -10,7 +10,10 @@
         <Button Content="グー" HorizontalAlignment="Left" Height="35" Margin="100,280,0,0" VerticalAlignment="Top" Width="101" Click="Button_Click"/>
         <Button Content="チョキ" HorizontalAlignment="Center" Height="35" Margin="0,280,0,0" VerticalAlignment="Top" Width="100" Click="Button_Click_1"/>
         <Button Content="パー" HorizontalAlignment="Left" Height="35" Margin="600,280,0,0" VerticalAlignment="Top" Width="101" Click="Button_Click_2"/>
-        <Label x:Name="ResultLabel" Content="" HorizontalAlignment="Center" Height="52" Margin="0,165,0,0" VerticalAlignment="Top" Width="156" FontSize="36"/>
+        <Image x:Name="ResultImage" HorizontalAlignment="Left" Height="112" Margin="337,100,0,0" VerticalAlignment="Top" Width="129"/>
+        <Image Source="resources/rock.png"  HorizontalAlignment="Left" Height="60" Margin="120,336,0,0" VerticalAlignment="Top" Width="78"/>
+        <Image Source="/resources/scissor.png"  HorizontalAlignment="Left" Height="60" Margin="370,336,0,0" VerticalAlignment="Top" Width="78"/>
+        <Image Source="/resources/paper.png"  HorizontalAlignment="Left" Height="60" Margin="620,336,0,0" VerticalAlignment="Top" Width="78"/>
 
     </Grid>
 </Window>
