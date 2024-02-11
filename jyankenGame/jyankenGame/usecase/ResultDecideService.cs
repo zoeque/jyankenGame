@@ -1,4 +1,5 @@
-﻿using System.Configuration;
+﻿using jyankenGame.domain;
+using System.Configuration;
 
 namespace jyankenGame.usecase
 {
@@ -6,12 +7,19 @@ namespace jyankenGame.usecase
     {
         private static int RATE = int.Parse(ConfigurationManager.AppSettings["Rate"]);
 
-        public Boolean ServiceWinGame()
+        public ResultModel GetResultOfService()
         {
             Random rnd = new Random();
             int num = rnd.Next(1, RATE);
-            if (num == 1) return false;
-            return true;
+            if (num == 1)
+            {
+                return ResultModel.LOSE;
+            }
+            if (num % 2 == 1)
+            {
+                return ResultModel.DRAW;
+            }
+            return ResultModel.WIN;
         }
     }
 }
